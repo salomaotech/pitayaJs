@@ -1,11 +1,15 @@
 $(document).ready(function () {
 
-    $.getScript("classes/IncludeFile.js").done(function (script, textStatus) {
+    $.when(
+            $.getScript("classes/LoadCss.js"),
+            $.getScript("classes/RouterController.js"),
+            $.Deferred(function (deferred) {
+                $(deferred.resolve);
+            })
+            ).done(function () {
 
-        var includeFile = new IncludeFile();
-        includeFile.addFile("classes/Router.js");
-        includeFile.addFile("assets/css/main.css");
-        includeFile.load();
+        new LoadCss().load("assets/css/main.css");
+        new RouterController().resolve();
 
     });
 

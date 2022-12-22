@@ -1,8 +1,9 @@
 function abc() {
 
-    $("body").html("oiiiiiiiiiiiiiii");
+    $("body").append("oiiiiiiiiiiiiiii");
+    $("body").append("oiiiiiiiiiiiiiii");
+
 
 }
-
 
 abc();

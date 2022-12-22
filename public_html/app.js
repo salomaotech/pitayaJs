@@ -1,17 +1,24 @@
 $(document).ready(function () {
 
-    $.when(
-            $.getScript("classes/LoadScript.js"),
-            $.getScript("classes/Css.js"),
-            $.getScript("classes/Router.js"),
-            $.Deferred(function (deferred) {
-                $(deferred.resolve);
+    $.getScript("classes/IncludeFile.js")
+            .done(function (script, textStatus) {
+
+                var includeFile = new IncludeFile();
+
+                /* js */
+                includeFile.addFile("classes/Router.js");
+
+                /* css */
+                includeFile.addFile("assets/css/main.css");
+
+                /* load */
+                includeFile.load();
+
+
             })
-            ).done(function () {
+            .fail(function (jqxhr, settings, exception) {
 
-        new Css().loadCssFile("assets/css/main.css");
-        new Router().resolve();
 
-    });
+            });
 
 });

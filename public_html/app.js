@@ -1,24 +1,12 @@
 $(document).ready(function () {
 
-    $.getScript("classes/IncludeFile.js")
-            .done(function (script, textStatus) {
+    $.getScript("classes/IncludeFile.js").done(function (script, textStatus) {
 
-                var includeFile = new IncludeFile();
+        var includeFile = new IncludeFile();
+        includeFile.addFile("classes/Router.js");
+        includeFile.addFile("assets/css/main.css");
+        includeFile.load();
 
-                /* js */
-                includeFile.addFile("classes/Router.js");
-
-                /* css */
-                includeFile.addFile("assets/css/main.css");
-
-                /* load */
-                includeFile.load();
-
-
-            })
-            .fail(function (jqxhr, settings, exception) {
-
-
-            });
+    });
 
 });

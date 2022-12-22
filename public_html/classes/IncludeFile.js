@@ -17,13 +17,10 @@ class IncludeFile {
             switch (pathFile.split('.').pop()) {
 
                 case "js":
-
                     $.getScript(pathFile);
-
                     break;
 
                 case "css":
-
                     $("head").append("<link>");
                     var css = $("head").children(":last");
                     css.attr({
@@ -31,7 +28,6 @@ class IncludeFile {
                         type: "text/css",
                         href: pathFile
                     });
-
                     break;
 
             }

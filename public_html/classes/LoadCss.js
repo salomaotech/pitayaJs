@@ -4,7 +4,7 @@ class LoadCss {
 
         $.when($.get(pathFile))
                 .done(function (response) {
-                    $('<style/>').text(response).appendTo($('head'));
+                    $("<style/>").text(response).appendTo($("head"));
                 });
 
     }

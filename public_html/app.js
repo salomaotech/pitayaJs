@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     $.when(
-            $.getScript("components/Body.js"),
+            $.getScript("classes/Body.js"),
             $.getScript("classes/LoadCss.js"),
             $.getScript("classes/RouterController.js"),
             $.Deferred(function (deferred) {

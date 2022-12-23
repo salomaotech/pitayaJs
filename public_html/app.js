@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
     $.when(
-            $.getScript("classes/LoadCss.js"),
             $.getScript("components/Body.js"),
+            $.getScript("classes/LoadCss.js"),
             $.getScript("classes/RouterController.js"),
             $.Deferred(function (deferred) {
                 $(deferred.resolve);

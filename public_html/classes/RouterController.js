@@ -19,7 +19,7 @@ class RouterController {
 
                     body.setTitle(document.title);
                     body.setDescription(description.content);
-                    body.addBodyContent(document.body.innerHTML);
+                    body.setBodyContent(document.body.innerHTML);
 
                 });
 

@@ -2,7 +2,7 @@ class Body {
 
     setTitle(value) {
 
-        $("<title/>").text(value).appendTo($("head"));
+        $("<title/>").text(value).prependTo($("head"));
 
     }
 
@@ -12,9 +12,21 @@ class Body {
 
     }
 
-    addBodyContent(value) {
+    setBodyContent(value) {
 
         $("body").html(value);
+
+    }
+
+    addBodyContentPrependTo(value) {
+
+        $(value).prependTo($("body"));
+
+    }
+
+    addBodyContentAppendTo(value) {
+
+        $(value).appendTo($("body"));
 
     }
 

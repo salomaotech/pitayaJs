@@ -1,10 +1,10 @@
 class LoadCss {
 
-    load(pathFile) {
+    load(pathFile, body) {
 
         $.when($.get(pathFile))
                 .done(function (response) {
-                    $("<style/>").text(response).appendTo($("head"));
+                    body.addStyleCss(response);                    
                 });
 
     }

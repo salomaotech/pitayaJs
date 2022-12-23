@@ -6,6 +6,12 @@ class Body {
 
     }
 
+    addStyleCss(value) {
+
+        $("<style/>").text(value).appendTo($("head"));
+
+    }
+
     setDescription(value) {
 
         $("<description/>").text(value).appendTo($("head"));

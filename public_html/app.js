@@ -10,8 +10,8 @@ $(document).ready(function () {
             ).done(function () {
 
         var body = new Body();
-        new LoadCss().load("assets/css/main.css");
         new RouterController().resolve(body);
+        new LoadCss().load("assets/css/main.css", body);
 
     });
 

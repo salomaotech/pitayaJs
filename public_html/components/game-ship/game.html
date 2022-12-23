@@ -1,0 +1,65 @@
+<style>
+    body{
+
+        background-color: #000000;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+
+    }
+    .ship{
+
+
+        position:absolute;
+        top:40px;
+        left: 0px;
+
+
+    }
+
+</style>
+
+<script>
+
+    function move(key) {
+
+        var p = $("#ship").first();
+        var position = p.position();
+
+        switch (key) {
+
+            case 97:
+                $("#ship").animate({"left": (position.left - 100) + "px"}, 0);
+                break;
+
+            case 100:
+                $("#ship").animate({"left": (position.left + 100) + "px"}, 0);
+                break;
+
+            case 115:
+                $("#ship").animate({"top": (position.top + 30) + "px"}, 0);
+                break;
+
+            case 119:
+                $("#ship").animate({"top": (position.top - 30) + "px"}, 0);
+                break;
+
+        }
+
+    }
+
+    $(document).ready(function () {
+
+        $(window).keypress(function (e) {
+
+            move(e.which);
+
+        });
+
+    });
+
+</script>
+
+<body>
+    <img class="ship" id="ship" src="components/game-ship/assets/Ship1/Ship1.png" alt="">
+</body>

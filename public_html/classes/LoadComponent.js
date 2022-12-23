@@ -12,11 +12,13 @@ class LoadComponent {
 
                         case 1:
                             $("<style/>").text(document.querySelector("style").innerHTML).prependTo(elementSeletor);
+                            $("<script/>").text(document.querySelector("script").innerHTML).prependTo(elementSeletor);
                             $(document.body.innerHTML).prependTo(elementSeletor);
                             break;
 
                         case 2:
                             $("<style/>").text(document.querySelector("style").innerHTML).appendTo(elementSeletor);
+                            $("<script/>").text(document.querySelector("script").innerHTML).prependTo(elementSeletor);
                             $(document.body.innerHTML).appendTo(elementSeletor);
                             break;
 

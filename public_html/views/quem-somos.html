@@ -2,14 +2,16 @@
 <meta name="description" content="Somos...">
 <h1>Somos uma empresa de software</h1>
 
+<form id='teste'></form>
 <input type="button" value="Teste" id="btnTeste">
+
 
 <script>
 
     $("#btnTeste").click(function () {
 
-        body = new Body();
-        body.addBodyContentAppendTo("<h1>Olá</h1>");
+        new LoadComponent().prependTo("logo", "#teste");
+        new LoadComponent().prependTo("textarea", "#teste");
 
     });
 

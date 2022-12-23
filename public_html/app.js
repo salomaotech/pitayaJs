@@ -4,6 +4,7 @@ $(document).ready(function () {
             $.getScript("classes/Body.js"),
             $.getScript("classes/LoadCss.js"),
             $.getScript("classes/RouterController.js"),
+            $.getScript("classes/LoadComponent.js"),
             $.Deferred(function (deferred) {
                 $(deferred.resolve);
             })

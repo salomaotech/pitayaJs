@@ -9,17 +9,11 @@
             body.setDescription("Home page of PitayaJS frontend framework.");
 
             var loadComponent = new LoadComponent();
-            loadComponent.prependTo("center-block", "body");
-            loadComponent.prependTo("center-block2", "body");
-            loadComponent.prependTo("center-block", "body");
-            loadComponent.prependTo("center-block2", "body");
-            loadComponent.prependTo("center-block", "body");
-            loadComponent.prependTo("center-block2", "body");
-            loadComponent.prependTo("center-block", "body");
-            loadComponent.prependTo("center-block2", "body");
-            loadComponent.build();
+            loadComponent.prependTo("logo", "body");
 
-            // body.addBodyContentAppendTo("<h1>PitayaJS frontend framework</h1>");
+
+            loadComponent.build();
+            body.addBodyContentAppendTo("<h1>PitayaJS frontend framework</h1>");
 
         });
 

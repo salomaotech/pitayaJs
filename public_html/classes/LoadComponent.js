@@ -3,7 +3,7 @@ class LoadComponent {
     #elementsIdentificatorArray = [];
     #elementsRequestArray = [];
     #elementsSeletorArray = [];
-    #typeInsertion = [];
+    #elementTypeInsertionArray = [];
     #elementsCounter = 0;
 
     #popConfig(componentRequest, elementSeletor, typeInsertion) {
@@ -11,7 +11,7 @@ class LoadComponent {
         this.#elementsIdentificatorArray[this.#elementsCounter] = "component_pitaya_" + Date.now();
         this.#elementsRequestArray[this.#elementsCounter] = componentRequest;
         this.#elementsSeletorArray[this.#elementsCounter] = elementSeletor;
-        this.#typeInsertion[this.#elementsCounter] = typeInsertion;
+        this.#elementTypeInsertionArray[this.#elementsCounter] = typeInsertion;
         this.#elementsCounter++;
 
     }
@@ -26,55 +26,63 @@ class LoadComponent {
 
     build() {
 
+        /* counter of scheduler */
+        var counterScheduler = 0;
+
         /* copy values from local variables */
-        var elementsCounter = this.#elementsCounter;
         var elementsIdentificatorArray = this.#elementsIdentificatorArray;
         var elementsRequestArray = this.#elementsRequestArray;
         var elementsSeletorArray = this.#elementsSeletorArray;
-        var contador = 0;
+        var elementTypeInsertionArray = this.#elementTypeInsertionArray;
+        var elementsCounter = this.#elementsCounter;
 
         /* load data from the server using a HTTP GET request */
         function getSourceComponent() {
 
-            var identificator = elementsIdentificatorArray[contador];
-            var componentRequest = elementsRequestArray[contador];
-            var elementSeletor = elementsSeletorArray[contador];
-            var typeInsertion = 1;
+            var identificator = elementsIdentificatorArray[counterScheduler];
+            var componentRequest = elementsRequestArray[counterScheduler];
+            var elementSeletor = elementsSeletorArray[counterScheduler];
+            var typeInsertion = elementTypeInsertionArray[counterScheduler];
 
-            /* request */
-            $.when($.get("components/" + componentRequest + ".html"))
-                    .done(function (response) {
+            if (componentRequest !== undefined) {
 
-                        var parser = new DOMParser();
-                        var document = parser.parseFromString(response, "text/html");
-                        var css = document.querySelector("style").innerHTML;
-                        var script = document.querySelector("script").innerHTML;
-                        var html = "<section id=\"" + identificator + "\">" + document.body.innerHTML + "</section>";
+                $.when($.get("components/" + componentRequest + ".html"))
+                        .done(function (response) {
 
-                        switch (typeInsertion) {
+                            var parser = new DOMParser();
+                            var document = parser.parseFromString(response, "text/html");
+                            var css = document.querySelector("style").innerHTML;
+                            var script = document.querySelector("script").innerHTML;
+                            var html = "<section id=\"" + identificator + "\">" + document.body.innerHTML + "</section>";
 
-                            case 1:
-                                $(html).prependTo(elementSeletor);
-                                $("<style/>").text(css).prependTo($("#" + identificator));
-                                $("<script/>").text(script).prependTo($("#" + identificator));
-                                break;
+                            switch (typeInsertion) {
 
-                            case 2:
-                                $(html).appendTo(elementSeletor);
-                                $("<style/>").text(css).appendTo($("#" + identificator));
-                                $("<script/>").text(script).appendTo($("#" + identificator));
-                                break;
+                                case 1:
+                                    $(html).prependTo(elementSeletor);
+                                    $("<style/>").text(css).prependTo($("#" + identificator));
+                                    $("<script/>").text(script).prependTo($("#" + identificator));
+                                    break;
 
-                        }
+                                case 2:
+                                    $(html).appendTo(elementSeletor);
+                                    $("<style/>").text(css).appendTo($("#" + identificator));
+                                    $("<script/>").text(script).appendTo($("#" + identificator));
+                                    break;
 
-                        if (contador <= elementsCounter) {
+                            }
 
-                            contador++;
-                            getSourceComponent();
+                            /* check scheduler */
+                            if (counterScheduler <= elementsCounter) {
 
-                        }
+                                counterScheduler++;
+                                getSourceComponent();
 
-                    });
+                            }
+
+                        });
+
+            }
+
 
         }
 

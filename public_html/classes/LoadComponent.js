@@ -9,8 +9,6 @@ class LoadComponent {
 
                     var parser = new DOMParser();
                     var document = parser.parseFromString(response, "text/html");
-
-                    /* separate the contents of component */
                     var css = document.querySelector("style").innerHTML;
                     var script = document.querySelector("script").innerHTML;
                     var html = "<section id=\"" + identificator + "\">" + document.body.innerHTML + "</section>";

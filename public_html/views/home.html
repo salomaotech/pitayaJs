@@ -1,12 +1,24 @@
-<title>Home</title>
-<meta name="description" content="Pitaya front framework is open front framework.">
-
 <body>
 
-    <p style="text-align:center">
-        <img src="assets/images/pitaya.png">
-    </p>
+    <script>
 
-    <h1 style="text-align:center; color: #ffffff; font-family: arial">Pitaya framework</h1>
+        $(document).ready(function () {
+
+            body = new Body();
+            body.setTitle("PitayaJS frontend framework.");
+            body.setDescription("Home page of PitayaJS frontend framework.");
+            var idBlock = new LoadComponent().prependTo("center-block", "body");
+            new LoadComponent().appendTo("logo", "#" + idBlock);
+
+
+
+
+            // body.addBodyContentAppendTo("<h1>PitayaJS frontend framework</h1>");
+
+
+
+        });
+
+    </script>
 
 </body>

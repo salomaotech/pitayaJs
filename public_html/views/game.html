@@ -1,13 +1,24 @@
-<title>Super Mario</title>
-<meta name="description" content="Super Mario">
+<title>Ship</title>
+<meta name="description" content="Ship">
 
-<body></body>
+<body>
 
-<script>
+    <input type="button" value="Teste" onclick="esconder();">
+</body>
+
+<script> 
+
+    var id;
+
+    function esconder() {
+
+        $("#" + id).remove();
+
+    }
 
     $(document).ready(function () {
 
-        new LoadComponent().prependTo("game-ship/game", "body");
+        id = new LoadComponent().prependTo("game-ship/game", "body");
 
     });
 

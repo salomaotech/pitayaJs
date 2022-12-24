@@ -1,19 +1,24 @@
 <body>
 
+  
+    <nav></nav>
+    <main></main>
+    <footer>2023 | Developed by @salomaotech</footer>
+
     <script>
 
         $(document).ready(function () {
 
+            /* new body */
             body = new Body();
-            body.setTitle("PitayaJS frontend framework.");
-            body.setDescription("Home page of PitayaJS frontend framework.");
+            body.setTitle("PitayaJS Front-end Framework");
+            body.setDescription("Home page of PitayaJS Front-end Framework");
 
+            /* add component to main tag */
             var loadComponent = new LoadComponent();
-            loadComponent.prependTo("logo", "body");
-
-
+            loadComponent.prependTo("nav/nav", "nav");
+            loadComponent.prependTo("presentation", "main");
             loadComponent.build();
-            body.addBodyContentAppendTo("<h1>PitayaJS frontend framework</h1>");
 
         });
 

@@ -2,22 +2,15 @@
 
     <script>
 
-        var idGame;
-
-        function removeTheGame() {
-
-            $("#" + idGame).remove();
-
-        }
-
         $(document).ready(function () {
 
             body = new Body();
             body.setTitle("Game Ship - Demo");
             body.setDescription("This is a demonstration of how to create the game with PitayaJs Framework.");
-            body.addStyleCss("body{ background-color:red;}");
-            body.addBodyContentAppendTo("<input type='button' value='Remove the game from scenario' onclick='removeTheGame();'>");
-            idGame = new LoadComponent().appendTo("game-ship/game", "body");
+
+            loadComponent = new LoadComponent();
+            loadComponent.appendTo("game-ship/game", "body");
+            loadComponent.build();
 
         });
 

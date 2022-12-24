@@ -1,0 +1,133 @@
+<style>
+
+    .topnav {
+
+        overflow: hidden;
+
+    }
+
+    .topnav a {
+
+        float: left;
+        display: block;
+        text-align: center;
+        padding: 8px 16px;
+
+    }
+
+    .topnav .icon {
+
+        display: none;
+
+    }
+
+    .dropdown {
+
+        float: left;
+        overflow: hidden;
+
+    }
+
+    .dropdown .dropbtn {
+
+        border: none;
+        outline: none;
+        padding: 8px 16px;
+        margin: 0;
+
+    }
+
+    .dropdown-content {
+
+        display: none;
+        position: absolute;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+
+    }
+
+    .dropdown-content a {
+
+        float: none;
+        padding: 12px 16px;
+        display: block;
+        text-align: left;
+
+    }
+
+    .dropdown:hover .dropdown-content {
+
+        display: block;
+
+    }
+
+    .topnav *{
+
+        color: #cccccc;
+
+    }
+
+    .dropdown .dropbtn {
+
+        background-color: transparent;
+
+    }
+
+    .dropdown-content {
+
+        background-color: #333333;
+
+    }
+
+    .dropdown-content a {
+
+        background-color: #ffffff;
+        color: #000000;
+
+    }
+
+    .topnav a:hover, .dropdown:hover .dropbtn {
+
+        background-color: #333333;
+        color: #ffffff;
+
+    }
+
+    .dropdown-content a:hover {
+
+        background-color: #333333;
+        color: #ffffff;
+
+    }
+
+</style>
+
+<script>
+
+</script>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+
+        <a href="?home">Home</a>
+
+        <div class="dropdown">
+
+            <button class="dropbtn">&#9660; Exemplos
+                <i class=""></i>
+            </button>
+
+            <div class="dropdown-content">
+                <a href="?game">Game Ship</a>
+                <a href="?home">Home</a>
+            </div>
+
+        </div>
+
+        <a href="javascript:void(0);" class="icon" onclick="menuFunction()">&#9776;</a>
+
+    </div>
+
+</body>

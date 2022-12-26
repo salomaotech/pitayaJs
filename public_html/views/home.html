@@ -8,16 +8,15 @@
 
         $(document).ready(function () {
 
-            /* new body */
-            var body = new Body();
-            body.setTitle("PitayaJS Front-end Framework");
-            body.setDescription("Home page of PitayaJS Front-end Framework");
+            /* new page */
+            var page = new Page();
+            page.setTitle("PitayaJS Front-end Framework");
+            page.setDescription("Home page of PitayaJS Front-end Framework");
 
-            /* add component to main tag */
-            var loadComponent = new LoadComponent();
-            loadComponent.prependTo("nav/nav", "nav");
-            loadComponent.prependTo("presentation", "main");
-            loadComponent.build();
+            /* add widgets to home page */
+            var widget = new Widget();
+            widget.prependTo("nav/nav", "nav");
+            widget.load();
 
         });
 

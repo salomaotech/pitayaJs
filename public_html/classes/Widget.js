@@ -51,24 +51,21 @@ class Widget {
                 $.when($.get("widgets/" + componentRequest + ".html"))
                         .done(function (response) {
 
-                            var parser = new DOMParser();
-                            var document = parser.parseFromString(response, "text/html");
-                            var css = document.querySelector("style").innerHTML;
-                            var script = document.querySelector("script").innerHTML;
-                            var html = "<section id=\"" + identificator + "\">" + document.body.innerHTML + "</section>";
+                            var document = new DOMParser().parseFromString(response, "text/html");
+                            var html = "<section class=\"" + document.body.getAttribute("class") + "\" id=\"" + identificator + "\">" + document.body.innerHTML + "</section>";
 
                             switch (typeInsertion) {
 
                                 case 1:
                                     $(html).prependTo(elementSeletor);
-                                    $("<style/>").text(css).prependTo($("#" + identificator));
-                                    $("<script/>").text(script).prependTo($("#" + identificator));
+                                    $("<style/>").text(document.querySelector("style").innerHTML).prependTo($("#" + identificator));
+                                    $("<script/>").text(document.querySelector("script").innerHTML).prependTo($("#" + identificator));
                                     break;
 
                                 case 2:
                                     $(html).appendTo(elementSeletor);
-                                    $("<style/>").text(css).appendTo($("#" + identificator));
-                                    $("<script/>").text(script).appendTo($("#" + identificator));
+                                    $("<style/>").text(document.querySelector("style").innerHTML).appendTo($("#" + identificator));
+                                    $("<script/>").text(document.querySelector("script").innerHTML).appendTo($("#" + identificator));
                                     break;
 
                             }

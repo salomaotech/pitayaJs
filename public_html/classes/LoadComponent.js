@@ -46,7 +46,7 @@ class LoadComponent {
 
             if (componentRequest !== undefined) {
 
-                $.when($.get("components/" + componentRequest + ".html"))
+                $.when($.get("widgets/" + componentRequest + ".html"))
                         .done(function (response) {
 
                             var parser = new DOMParser();

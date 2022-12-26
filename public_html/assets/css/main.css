@@ -1,9 +1,31 @@
+/* fonts */
+@font-face{
+
+    font-family: Poppins-Regular;
+    src: url("assets/fonts/poppins/Poppins-Regular.ttf")
+
+}
+
+@font-face{
+
+    font-family: Poppins-Bold;
+    src: url("assets/fonts/poppins/Poppins-Bold.ttf")
+
+}
+
+@font-face{
+
+    font-family: Poppins-SemiBold;
+    src: url("assets/fonts/poppins/Poppins-SemiBold.ttf")
+
+}
+
 *{
 
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
-    font-family: "Arial";
+    font-family: Poppins-Regular !important;
     font-size: 15px;
 
 }

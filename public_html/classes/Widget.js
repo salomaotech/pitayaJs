@@ -8,20 +8,22 @@ class Widget {
 
     #popConfig(componentRequest, elementSeletor, typeInsertion) {
 
-        this.#elementsIdentificatorArray[this.#elementsCounter] = "component_pitaya_" + Date.now();
+        var identificator = "component_pitaya_" + Date.now();
+        this.#elementsIdentificatorArray[this.#elementsCounter] = identificator;
         this.#elementsRequestArray[this.#elementsCounter] = componentRequest;
         this.#elementsSeletorArray[this.#elementsCounter] = elementSeletor;
         this.#elementTypeInsertionArray[this.#elementsCounter] = typeInsertion;
         this.#elementsCounter++;
+        return identificator;
 
     }
 
     prependTo(componentRequest, elementSeletor) {
-        this.#popConfig(componentRequest, elementSeletor, 1);
+        return this.#popConfig(componentRequest, elementSeletor, 1);
     }
 
     appendTo(componentRequest, elementSeletor) {
-        this.#popConfig(componentRequest, elementSeletor, 2);
+        return this.#popConfig(componentRequest, elementSeletor, 2);
     }
 
     load() {

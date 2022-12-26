@@ -17,11 +17,7 @@
             /* add widgets to home page */
             var widget = new Widget();
             widget.prependTo("nav/nav", "nav");
-            var widget_2 = widget.prependTo("texts/h1-gradient", "main");
-
-
-            widget.appendTo("nav/nav", "#" + widget_2);
-
+            widget.prependTo("presentation-demo/center-logo", widget.prependTo("texts/h1-gradient", "main"));
             widget.load();
 
         });

@@ -8,13 +8,13 @@ class Widget {
 
     #popConfig(componentRequest, elementSeletor, typeInsertion) {
 
-        var identificator = "component_pitaya_" + Date.now();
+        var identificator = "widget_pitaya_" + Date.now() + "_" + this.#elementsCounter;
         this.#elementsIdentificatorArray[this.#elementsCounter] = identificator;
         this.#elementsRequestArray[this.#elementsCounter] = componentRequest;
         this.#elementsSeletorArray[this.#elementsCounter] = elementSeletor;
         this.#elementTypeInsertionArray[this.#elementsCounter] = typeInsertion;
         this.#elementsCounter++;
-        return identificator;
+        return "#" + identificator;
 
     }
 

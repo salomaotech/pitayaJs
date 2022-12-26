@@ -2,7 +2,7 @@
 
     <nav></nav>
     <main></main>
-    <footer>2023 | Developed by @salomaotech</footer>
+    <footer></footer>
 
     <script>
 
@@ -10,15 +10,18 @@
 
             /* new page */
             var page = new Page();
-            page.setTitle("PitayaJS Front-end Framework");
-            page.setDescription("Home page of PitayaJS Front-end Framework");
+            page.setTitle("Home - PitayaJS");
+            page.setDescription("PitayaJs é um framework front-end que constroe páginas HTML através de componentes chamados widgets.");
             page.addStyleCss("assets/css/main.css");
 
             /* add widgets to home page */
             var widget = new Widget();
             widget.prependTo("nav/nav", "nav");
-            widget.prependTo("presentation-demo/center-logo", "main");
-            widget.appendTo("presentation-demo/center-name-project", "main");
+            widget.prependTo("footer/footer", "footer");
+            var widgetAlignCenter = widget.prependTo("align/align-center", "main");
+            var widgetTextoGradient = widget.appendTo("texts/gradient", widgetAlignCenter);
+            widget.prependTo("presentation-demo/center-logo", widgetAlignCenter);
+            widget.prependTo("presentation-demo/sobre", widgetTextoGradient);
             widget.load();
 
         });

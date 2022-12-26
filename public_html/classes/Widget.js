@@ -52,7 +52,8 @@ class Widget {
                         .done(function (response) {
 
                             var document = new DOMParser().parseFromString(response, "text/html");
-                            var html = "<section class=\"" + document.body.getAttribute("class") + "\" id=\"" + identificator + "\">" + document.body.innerHTML + "</section>";
+                            var className = document.body.getAttribute("class") !== null ? document.body.getAttribute("class") : " ";
+                            var html = "<section class=\"" + className + "\" id=\"" + identificator + "\">" + document.body.innerHTML + "</section>";
 
                             switch (typeInsertion) {
 

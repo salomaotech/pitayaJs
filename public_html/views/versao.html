@@ -10,7 +10,7 @@
 
             /* new page */
             var page = new Page();
-            page.setTitle("Documentação - PitayaJS");
+            page.setTitle("Versão - PitayaJS");
             page.setDescription("PitayaJs é um framework front-end que constroe páginas HTML através de componentes chamados widgets.");
             page.addStyleCss("assets/css/main.css");
 
@@ -18,9 +18,10 @@
             var widget = new Widget();
             widget.prependTo("nav/nav", "nav");
             widget.prependTo("footer/footer", "footer");
-            var widgetAlignCenter = widget.appendTo("align/align-center", "main");
+            var widgetAlignCenter = widget.prependTo("align/align-center", "main");
             var widgetTextoGradient = widget.appendTo("texts/gradient", widgetAlignCenter);
-            widget.prependTo("presentation-demo/documentacao", widgetTextoGradient);
+            widget.prependTo("presentation-demo/center-logo", widgetAlignCenter);
+            widget.prependTo("presentation-demo/versao", widgetTextoGradient);
             widget.load();
 
         });

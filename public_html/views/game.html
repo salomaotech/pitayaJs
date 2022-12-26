@@ -1,0 +1,22 @@
+<body>
+
+    <script>
+
+        $(document).ready(function () {
+
+            /* new page */
+            var page = new Page();
+            page.setTitle("Game Ship - Demo");
+            page.setDescription("This is a demonstration of how to create the game with PitayaJs Framework.");
+            page.addStyleCss("assets/css/main.css");
+
+            /* add widgets to home page */
+            var widget = new Widget();
+            widget.appendTo("game-ship/game", "body");
+            widget.load();
+
+        });
+
+    </script>
+
+</body>

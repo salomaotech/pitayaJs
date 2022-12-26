@@ -10,7 +10,6 @@ $(document).ready(function () {
             ).done(function () {
 
         new Router().resolve();
-        new Page().addStyleCss("assets/css/main.css");
 
     });
 

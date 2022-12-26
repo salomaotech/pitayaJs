@@ -12,10 +12,12 @@
             var page = new Page();
             page.setTitle("PitayaJS Front-end Framework");
             page.setDescription("Home page of PitayaJS Front-end Framework");
+            page.addStyleCss("assets/css/main.css");
 
             /* add widgets to home page */
             var widget = new Widget();
             widget.prependTo("nav/nav", "nav");
+            widget.prependTo("presentation/presentation", "main");
             widget.load();
 
         });

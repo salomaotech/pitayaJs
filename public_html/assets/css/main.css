@@ -2,24 +2,26 @@
 @font-face{
 
     font-family: Poppins-Regular;
-    src: url("assets/fonts/poppins/Poppins-Regular.ttf")
+    src: url("../fonts/poppins/Poppins-Regular.ttf");
 
 }
 
 @font-face{
 
     font-family: Poppins-Bold;
-    src: url("assets/fonts/poppins/Poppins-Bold.ttf")
+    src: url("../assets/fonts/poppins/Poppins-Bold.ttf");
 
 }
 
 @font-face{
 
     font-family: Poppins-SemiBold;
-    src: url("assets/fonts/poppins/Poppins-SemiBold.ttf")
+    src: url("../assets/fonts/poppins/Poppins-SemiBold.ttf");
 
 }
 
+
+/* basic layout */
 *{
 
     margin: 0px;
@@ -105,5 +107,12 @@ footer{
 footer a{
 
     color: #ffa58d;
+
+}
+
+
+/* mobile */
+@media only screen and (min-width: 320px) and (max-width: 1024px){
+
 
 }

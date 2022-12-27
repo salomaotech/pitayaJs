@@ -1,19 +1,23 @@
 class Page {
 
     setTitle(value) {
-        $("<title/>").text(value).prependTo($("head"));
+        $(document).prop("title", value);
     }
 
-    addStyleCss(pathFile) {
+    addStyleCssLinkHead(pathFile) {
+        $("<link rel=\"stylesheet\" href=\"" + pathFile + "\">").appendTo("head");
+    }
+
+    addStyleCssGetRequest(pathFile) {
 
         $.when($.get(pathFile)).done(function (response) {
-            $("<style/>").text(response).appendTo($("head"));
+            $("<style/>").text(response).appendTo($("body"));
         });
 
     }
 
     setDescription(value) {
-        $("<description/>").text(value).appendTo($("head"));
+        $("<meta name=\"description\" content=\"" + value + "\">").prependTo("head");
     }
 
     setBodyContent(value) {

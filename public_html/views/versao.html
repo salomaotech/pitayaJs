@@ -11,8 +11,9 @@
             /* new page */
             var page = new Page();
             page.setTitle("Versão - PitayaJS");
-            page.setDescription("PitayaJs é um framework front-end que constrói páginas HTML através de componentes chamados widgets.");
-            page.addStyleCss("assets/css/main.css");
+            page.setDescription("PitayaJs é um framework front-end baseado em widgets.");
+            page.addStyleCssLinkHead("assets/css/main.css");
+            page.addStyleCssGetRequest("assets/css/custom.css");
 
             /* add widgets to home page */
             var widget = new Widget();

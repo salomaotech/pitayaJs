@@ -14,15 +14,17 @@
             page.setDescription("PitayaJs é um framework front-end baseado em widgets.");
             page.addStyleCssLinkHead("assets/css/main.css");
             page.addStyleCssGetRequest("assets/css/custom.css");
-    
+
             /* add widgets to home page */
             var widget = new Widget();
             widget.prependTo("nav/nav", "nav");
             widget.prependTo("footer/footer", "footer");
             var widgetAlignCenter = widget.prependTo("align/align-center", "main");
+
             var widgetTextoGradient = widget.appendTo("texts/gradient", widgetAlignCenter);
             widget.prependTo("presentation-demo/center-logo", widgetAlignCenter);
             widget.prependTo("presentation-demo/sobre", widgetTextoGradient);
+            widget.prependTo("presentation-demo/colabora", widgetAlignCenter);
             widget.load();
 
         });
